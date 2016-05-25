@@ -13,7 +13,7 @@ MongoClient.connect('mongodb://ec2-52-26-15-244.us-west-2.compute.amazonaws.com/
 	//changed ip
   if (err) return console.log(err)
   db = database
-  app.listen(3000, () => {
+  app.listen(80, () => {
     console.log('listening on 3000')
   })
 });
