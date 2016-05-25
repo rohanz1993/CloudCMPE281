@@ -7,13 +7,13 @@ const bodyParser= require('body-parser')
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
-var db
+var db;
 
 MongoClient.connect('mongodb://ec2-52-26-15-244.us-west-2.compute.amazonaws.com/test', (err, database) => {
 	//changed ip
   if (err) return console.log(err)
   db = database
-  app.listen(80, () => {
+  app.listen(process.env.PORT || 8080, () => {
     console.log('listening on 3000')
   })
 });
